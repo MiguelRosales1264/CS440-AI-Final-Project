@@ -119,7 +119,7 @@ class BigramLanguageModel(nn.Module):
         
         return logits, loss
     
-    def generation(self, idx, max_new_tokens):
+    def generate(self, idx, max_new_tokens):
         for _ in range(max_new_tokens):
             logits, loss = self(idx)
             logits = logits[:, -1, :]
@@ -134,6 +134,6 @@ logits, loss = model(xb, yb)
 print(logits.shape)
 print(loss) # -ln(1/vocabulary_size) = -ln(1/76) = 4.3307
 
-print(decode(model.generation(idx = torch.zeros((1, 1), dtype=torch.long), max_new_tokens=100)[0].tolist()))
+print(decode(model.generate(idx = torch.zeros((1, 1), dtype=torch.long), max_new_tokens=100)[0].tolist()))
 
 # HAVE NOT ADDED GUI YET
