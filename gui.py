@@ -3,7 +3,7 @@ import tkinter as tk
 # Main GUI window setup
 window = tk.Tk()
 window.title("Chadbot")
-window.geometry("400x300")
+window.geometry("500x400")
  
 # Placeholder text for the entry box
 placeholder_text = "Ask a question"
