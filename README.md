@@ -35,5 +35,3 @@ deactivate
 
 # to remove the virtual environment
 rm -rf venv
-
-
